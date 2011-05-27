@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'data_mapper'
 require 'dm-pager'
 require 'sinatra'
@@ -7,8 +6,12 @@ require 'haml'
 require 'lib/item'
 require 'lib/client'
 
-DataMapper::Logger.new($stdout, :debug)
-DataMapper.setup(:default, {:adapter => 'sqlite3', :database => 'db/development.db'})
+if ENV['RACK_ENV'] == 'production'
+  DataMapper.setup(:default, ENV['DATABASE_URL'])
+elsif ENV['RACK_ENV'] = 'development'
+  DataMapper::Logger.new($stdout, :debug)
+  DataMapper.setup(:default, {:adapter => 'sqlite3', :database => 'db/development.db'})
+end
 
 configure do
   set :haml, :format => :html5
