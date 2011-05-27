@@ -1,0 +1,13 @@
+%h2 支援要請を編集
+%form{:action => "/item/#{@item.id}/edit", :method => 'POST'}
+  %label{:for => 'title'} 件名
+  %input{:name => 'title', :type => 'text', :id => 'title', :value => @item.title}
+  %br
+  %label{:for => 'amount'} 個数
+  %input{:name => 'amount', :id => 'amount', :type => 'number', :value => @item.amount}
+  %br
+  %label{:for => 'body'} 説明
+  %textarea{:name => 'body', :id => 'body'}= @item.body
+  %br
+  %input{:type => 'submit', :value => '支援要請を修正する'}
+

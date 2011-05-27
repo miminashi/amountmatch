@@ -1,0 +1,7 @@
+%h3= @item.title
+%h4 支援を必要としている組織の名称
+%p= @item.client.name
+%h4 現在集まっている個数
+%p== #{@item.gained} / #{@item.amount}
+%h4 本文
+%p= @item.body

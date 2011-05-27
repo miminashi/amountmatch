@@ -1,0 +1,13 @@
+%h2 支援要請を追加
+%form{:action => '/item/new', :method => 'POST'}
+  %label{:for => 'title'} 件名
+  %input{:name => 'title', :type => 'text', :id => 'title'}
+  %br
+  %label{:for => 'amount'} 個数
+  %input{:name => 'amount', :id => 'amount', :type => 'number'}
+  %br
+  %label{:for => 'body'} 説明
+  %textarea{:name => 'body', :id => 'body'}
+  %br
+  %input{:type => 'submit', :value => 'リクエストを送る'}
+

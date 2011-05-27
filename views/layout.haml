@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{:"http-equive" => 'Content-Type', :content => 'text/html', :charset => 'utf-8'}
+    %title 支援物資マッチングサイト
+  %body
+    .header
+      %h1
+        %a{:href => '/'} 支援物資マッチングサイト
+      %p 個数のミスマッチを防ぐ
+      %a{:href => '/item/new'} 支援を要請する
+    .contents
+      %hr
+      = yield
+      %hr
+    .header
+      %p 2011, @miminashi
+

@@ -1,0 +1,18 @@
+.navigator
+  %ul
+    %li 必要な支援
+    %li
+      %a{:href => '/item/closed'} 完了した支援
+    %li
+      %a{:href => '/client'} 支援を必要としている団体
+- @items.each do |item|
+  .item
+    %h3= item.title
+    %h4 支援を必要としている組織の名称
+    %p= item.client.name
+    %h4 現在集まっている個数
+    %p== #{item.gained} / #{item.amount}
+    %h4 本文
+    %p= item.body
+    %a{:href => "/item/#{item.id}/entry"} 支援する
+    %a{:href => "/item/#{item.id}/edit"} 編集する
